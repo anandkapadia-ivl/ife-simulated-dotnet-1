@@ -1,0 +1,263 @@
+﻿2026-10-01 13:52:49.102 INFO  30972 --- [main                        ] DotNetSimulator.Program                  : Starting DotNetSimulator v1.0.0 on Microsoft .NET Runtime with PID 30972
+2026-10-01 13:52:49.108 INFO  30972 --- [main                        ] DotNetSimulator.Program                  : Environment: 64-bit OS, MachineName=IVL-LP502, ProcessorCount=16, CLR=4.0.30319.42000
+2026-10-01 13:52:49.120 DEBUG 30972 --- [main                        ] DotNetSimulator.Program                  : Garbage Collector Mode: Workstation GC, Concurrent=True, LOH Threshold=85000 bytes
+2026-10-01 13:52:49.145 DEBUG 30972 --- [main                        ] DotNetSimulator.Program                  : Initializing Core Services: MemoryLeakService, DeadlockService, ThreadSaturationService, ThreadLocalLeakService, AsyncQueueSaturationService, ResourceContentionService
+2026-10-01 13:52:49.180 INFO  30972 --- [main                        ] DotNetSimulator.Program                  : HttpListener started and listening on http://localhost:5050/
+2026-10-01 13:52:49.190 INFO  30972 --- [main                        ] DotNetSimulator.Program                  : Application initialized and ready for incident simulation
+2026-10-01 13:53:18.910 DEBUG 30972 --- [HttpWorker-1                ] DotNetSimulator.HttpServer               : GET '/actuator/health', query=
+2026-10-01 13:53:18.915 DEBUG 30972 --- [HttpWorker-1                ] DotNetSimulator.HttpServer               : Completed 200 OK for GET /actuator/health in 5ms
+2026-10-01 13:53:26.065 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.HttpServer               : POST '/incident/memory-leak', query=?megabytes=1
+2026-10-01 13:53:26.065 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.MemoryLeakService        : Allocating byte[1048576] buffer into static RetainedRequests list. Pinned on LOH. Heap committed=16MB
+2026-10-01 13:53:26.065 INFO  30972 --- [HttpWorker-2                ] DotNetSimulator.MemoryLeakService        : Retained 1 MB; total retained objects=1, cumulative bytes=1048576
+2026-10-01 13:53:26.065 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.HttpServer               : Completed 200 OK for POST /incident/memory-leak in 6ms
+2026-10-01 13:53:26.130 DEBUG 30972 --- [HttpWorker-3                ] DotNetSimulator.HttpServer               : POST '/incident/memory-leak', query=?megabytes=1
+2026-10-01 13:53:26.130 DEBUG 30972 --- [HttpWorker-3                ] DotNetSimulator.MemoryLeakService        : Allocating byte[1048576] buffer into static RetainedRequests list. Pinned on LOH. Heap committed=17MB
+2026-10-01 13:53:26.130 INFO  30972 --- [HttpWorker-3                ] DotNetSimulator.MemoryLeakService        : Retained 1 MB; total retained objects=2, cumulative bytes=2097152
+2026-10-01 13:53:26.130 DEBUG 30972 --- [HttpWorker-3                ] DotNetSimulator.HttpServer               : Completed 200 OK for POST /incident/memory-leak in 6ms
+2026-10-01 13:53:26.195 DEBUG 30972 --- [HttpWorker-4                ] DotNetSimulator.HttpServer               : POST '/incident/memory-leak', query=?megabytes=1
+2026-10-01 13:53:26.195 DEBUG 30972 --- [HttpWorker-4                ] DotNetSimulator.MemoryLeakService        : Allocating byte[1048576] buffer into static RetainedRequests list. Pinned on LOH. Heap committed=18MB
+2026-10-01 13:53:26.195 INFO  30972 --- [HttpWorker-4                ] DotNetSimulator.MemoryLeakService        : Retained 1 MB; total retained objects=3, cumulative bytes=3145728
+2026-10-01 13:53:26.195 DEBUG 30972 --- [HttpWorker-4                ] DotNetSimulator.HttpServer               : Completed 200 OK for POST /incident/memory-leak in 6ms
+2026-10-01 13:53:26.260 DEBUG 30972 --- [HttpWorker-1                ] DotNetSimulator.HttpServer               : POST '/incident/memory-leak', query=?megabytes=1
+2026-10-01 13:53:26.260 DEBUG 30972 --- [HttpWorker-1                ] DotNetSimulator.MemoryLeakService        : Allocating byte[1048576] buffer into static RetainedRequests list. Pinned on LOH. Heap committed=19MB
+2026-10-01 13:53:26.260 INFO  30972 --- [HttpWorker-1                ] DotNetSimulator.MemoryLeakService        : Retained 1 MB; total retained objects=4, cumulative bytes=4194304
+2026-10-01 13:53:26.260 DEBUG 30972 --- [HttpWorker-1                ] DotNetSimulator.HttpServer               : Completed 200 OK for POST /incident/memory-leak in 6ms
+2026-10-01 13:53:26.325 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.HttpServer               : POST '/incident/memory-leak', query=?megabytes=1
+2026-10-01 13:53:26.325 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.MemoryLeakService        : Allocating byte[1048576] buffer into static RetainedRequests list. Pinned on LOH. Heap committed=20MB
+2026-10-01 13:53:26.325 INFO  30972 --- [HttpWorker-2                ] DotNetSimulator.MemoryLeakService        : Retained 1 MB; total retained objects=5, cumulative bytes=5242880
+2026-10-01 13:53:26.325 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.HttpServer               : Completed 200 OK for POST /incident/memory-leak in 6ms
+2026-10-01 13:53:26.500 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.HttpServer               : POST '/incident/waiting-threads', query=?count=40&waitMs=300000
+2026-10-01 13:53:26.510 INFO  30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Initiating spawn of 40 waiting worker threads with 300000ms wait
+2026-10-01 13:53:26.528 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-1 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.528 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-1  ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-1 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.536 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-2 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.536 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-2  ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-2 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.544 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-3 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.544 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-3  ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-3 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.552 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-4 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.552 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-4  ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-4 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.560 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-5 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.560 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-5  ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-5 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.568 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-6 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.568 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-6  ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-6 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.576 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-7 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.576 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-7  ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-7 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.584 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-8 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.584 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-8  ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-8 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.592 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-9 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.592 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-9  ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-9 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.600 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-10 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.600 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-10 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-10 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.608 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-11 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.608 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-11 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-11 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.616 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-12 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.616 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-12 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-12 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.624 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-13 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.624 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-13 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-13 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.632 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-14 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.632 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-14 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-14 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.640 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-15 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.640 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-15 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-15 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.648 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-16 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.648 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-16 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-16 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.656 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-17 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.656 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-17 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-17 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.664 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-18 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.664 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-18 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-18 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.672 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-19 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.672 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-19 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-19 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.680 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-20 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.680 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-20 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-20 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.688 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-21 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.688 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-21 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-21 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.696 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-22 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.696 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-22 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-22 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.704 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-23 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.704 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-23 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-23 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.712 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-24 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.712 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-24 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-24 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.720 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-25 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.720 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-25 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-25 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.728 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-26 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.728 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-26 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-26 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.736 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-27 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.736 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-27 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-27 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.744 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-28 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.744 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-28 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-28 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.752 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-29 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.752 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-29 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-29 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.760 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-30 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.760 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-30 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-30 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.768 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-31 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.768 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-31 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-31 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.776 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-32 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.776 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-32 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-32 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.784 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-33 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.784 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-33 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-33 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.792 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-34 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.792 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-34 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-34 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.800 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-35 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.800 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-35 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-35 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.808 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-36 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.808 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-36 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-36 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.816 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-37 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.816 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-37 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-37 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.824 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-38 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.824 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-38 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-38 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.832 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-39 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.832 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-39 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-39 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.840 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-40 spawned and started (IsBackground=True)
+2026-10-01 13:53:26.840 DEBUG 30972 --- [IFE-DotNet-WaitingWorker-40 ] DotNetSimulator.ThreadSaturationService  : Thread IFE-DotNet-WaitingWorker-40 entered WAITING state on ManualResetEventSlim
+2026-10-01 13:53:26.900 INFO  30972 --- [HttpWorker-2                ] DotNetSimulator.ThreadSaturationService  : Created 40 waiting worker threads (total=40)
+2026-10-01 13:53:26.905 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.HttpServer               : Completed 200 OK for POST /incident/waiting-threads in 405ms
+2026-10-01 13:53:27.100 DEBUG 30972 --- [HttpWorker-3                ] DotNetSimulator.HttpServer               : POST '/incident/deadlock', query=?payloadMb=1
+2026-10-01 13:53:27.110 INFO  30972 --- [HttpWorker-3                ] DotNetSimulator.DeadlockService          : Triggering deadlock between IFE-DotNet-DeadlockWorker-A and IFE-DotNet-DeadlockWorker-B with 1MB payloads
+2026-10-01 13:53:27.120 DEBUG 30972 --- [IFE-DotNet-DeadlockWorker-A ] DotNetSimulator.DeadlockService          : Thread IFE-DotNet-DeadlockWorker-A started, attempting to acquire lock on resourceA (object 0x0000028A7C12F490)
+2026-10-01 13:53:27.122 DEBUG 30972 --- [IFE-DotNet-DeadlockWorker-B ] DotNetSimulator.DeadlockService          : Thread IFE-DotNet-DeadlockWorker-B started, attempting to acquire lock on resourceB (object 0x0000028A7C12F4A0)
+2026-10-01 13:53:27.140 INFO  30972 --- [IFE-DotNet-DeadlockWorker-A ] DotNetSimulator.DeadlockService          : DeadlockWorker-A acquired resourceA [monitor 0x0000028A7C12F490]
+2026-10-01 13:53:27.142 INFO  30972 --- [IFE-DotNet-DeadlockWorker-B ] DotNetSimulator.DeadlockService          : DeadlockWorker-B acquired resourceB [monitor 0x0000028A7C12F4A0]
+2026-10-01 13:53:27.155 DEBUG 30972 --- [IFE-DotNet-DeadlockWorker-A ] DotNetSimulator.DeadlockService          : Allocated DeadlockPayload(Thread='IFE-DotNet-DeadlockWorker-A', Buffer=1048576 bytes)
+2026-10-01 13:53:27.156 DEBUG 30972 --- [IFE-DotNet-DeadlockWorker-B ] DotNetSimulator.DeadlockService          : Allocated DeadlockPayload(Thread='IFE-DotNet-DeadlockWorker-B', Buffer=1048576 bytes)
+2026-10-01 13:53:27.260 INFO  30972 --- [IFE-DotNet-DeadlockWorker-A ] DotNetSimulator.DeadlockService          : DeadlockWorker-A waiting for resourceB [monitor 0x0000028A7C12F4A0]...
+2026-10-01 13:53:27.262 INFO  30972 --- [IFE-DotNet-DeadlockWorker-B ] DotNetSimulator.DeadlockService          : DeadlockWorker-B waiting for resourceA [monitor 0x0000028A7C12F490]...
+2026-10-01 13:53:27.275 WARN  30972 --- [Deadlock-Monitor            ] DotNetSimulator.DeadlockService          : Circular monitor wait detected: IFE-DotNet-DeadlockWorker-A holds 0x0000028A7C12F490 waits for 0x0000028A7C12F4A0; IFE-DotNet-DeadlockWorker-B holds 0x0000028A7C12F4A0 waits for 0x0000028A7C12F490
+2026-10-01 13:53:27.300 DEBUG 30972 --- [HttpWorker-4                ] DotNetSimulator.HttpServer               : POST '/incident/threadlocal-leak', query=?count=8&megabytes=1
+2026-10-01 13:53:27.310 INFO  30972 --- [HttpWorker-4                ] DotNetSimulator.ThreadLocalLeakService   : Spawning 8 pool workers and assigning 1MB ThreadLocal payloads
+2026-10-01 13:53:27.38 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-1] DotNetSimulator.ThreadLocalLeakService   : Allocating ThreadLocalSessionContext(SessionId=NET-SESSION-63894844407310-1, Buffer=1048576 bytes)
+2026-10-01 13:53:27.38 INFO  30972 --- [IFE-DotNet-ThreadLocalWorker-1] DotNetSimulator.ThreadLocalLeakService   : Assigned 1 MB ThreadLocal context to IFE-DotNet-ThreadLocalWorker-1 (Key=SessionContext, Value=NET-SESSION-63894844407310-1)
+2026-10-01 13:53:27.390 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-1] DotNetSimulator.ThreadLocalLeakService   : Thread IFE-DotNet-ThreadLocalWorker-1 entered sleep; ThreadLocal.Dispose() or Value cleanup omitted
+2026-10-01 13:53:27.316 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-2] DotNetSimulator.ThreadLocalLeakService   : Allocating ThreadLocalSessionContext(SessionId=NET-SESSION-63894844407310-2, Buffer=1048576 bytes)
+2026-10-01 13:53:27.316 INFO  30972 --- [IFE-DotNet-ThreadLocalWorker-2] DotNetSimulator.ThreadLocalLeakService   : Assigned 1 MB ThreadLocal context to IFE-DotNet-ThreadLocalWorker-2 (Key=SessionContext, Value=NET-SESSION-63894844407310-2)
+2026-10-01 13:53:27.390 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-2] DotNetSimulator.ThreadLocalLeakService   : Thread IFE-DotNet-ThreadLocalWorker-2 entered sleep; ThreadLocal.Dispose() or Value cleanup omitted
+2026-10-01 13:53:27.324 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-3] DotNetSimulator.ThreadLocalLeakService   : Allocating ThreadLocalSessionContext(SessionId=NET-SESSION-63894844407310-3, Buffer=1048576 bytes)
+2026-10-01 13:53:27.324 INFO  30972 --- [IFE-DotNet-ThreadLocalWorker-3] DotNetSimulator.ThreadLocalLeakService   : Assigned 1 MB ThreadLocal context to IFE-DotNet-ThreadLocalWorker-3 (Key=SessionContext, Value=NET-SESSION-63894844407310-3)
+2026-10-01 13:53:27.390 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-3] DotNetSimulator.ThreadLocalLeakService   : Thread IFE-DotNet-ThreadLocalWorker-3 entered sleep; ThreadLocal.Dispose() or Value cleanup omitted
+2026-10-01 13:53:27.332 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-4] DotNetSimulator.ThreadLocalLeakService   : Allocating ThreadLocalSessionContext(SessionId=NET-SESSION-63894844407310-4, Buffer=1048576 bytes)
+2026-10-01 13:53:27.332 INFO  30972 --- [IFE-DotNet-ThreadLocalWorker-4] DotNetSimulator.ThreadLocalLeakService   : Assigned 1 MB ThreadLocal context to IFE-DotNet-ThreadLocalWorker-4 (Key=SessionContext, Value=NET-SESSION-63894844407310-4)
+2026-10-01 13:53:27.390 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-4] DotNetSimulator.ThreadLocalLeakService   : Thread IFE-DotNet-ThreadLocalWorker-4 entered sleep; ThreadLocal.Dispose() or Value cleanup omitted
+2026-10-01 13:53:27.340 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-5] DotNetSimulator.ThreadLocalLeakService   : Allocating ThreadLocalSessionContext(SessionId=NET-SESSION-63894844407310-5, Buffer=1048576 bytes)
+2026-10-01 13:53:27.340 INFO  30972 --- [IFE-DotNet-ThreadLocalWorker-5] DotNetSimulator.ThreadLocalLeakService   : Assigned 1 MB ThreadLocal context to IFE-DotNet-ThreadLocalWorker-5 (Key=SessionContext, Value=NET-SESSION-63894844407310-5)
+2026-10-01 13:53:27.390 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-5] DotNetSimulator.ThreadLocalLeakService   : Thread IFE-DotNet-ThreadLocalWorker-5 entered sleep; ThreadLocal.Dispose() or Value cleanup omitted
+2026-10-01 13:53:27.348 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-6] DotNetSimulator.ThreadLocalLeakService   : Allocating ThreadLocalSessionContext(SessionId=NET-SESSION-63894844407310-6, Buffer=1048576 bytes)
+2026-10-01 13:53:27.348 INFO  30972 --- [IFE-DotNet-ThreadLocalWorker-6] DotNetSimulator.ThreadLocalLeakService   : Assigned 1 MB ThreadLocal context to IFE-DotNet-ThreadLocalWorker-6 (Key=SessionContext, Value=NET-SESSION-63894844407310-6)
+2026-10-01 13:53:27.390 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-6] DotNetSimulator.ThreadLocalLeakService   : Thread IFE-DotNet-ThreadLocalWorker-6 entered sleep; ThreadLocal.Dispose() or Value cleanup omitted
+2026-10-01 13:53:27.356 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-7] DotNetSimulator.ThreadLocalLeakService   : Allocating ThreadLocalSessionContext(SessionId=NET-SESSION-63894844407310-7, Buffer=1048576 bytes)
+2026-10-01 13:53:27.356 INFO  30972 --- [IFE-DotNet-ThreadLocalWorker-7] DotNetSimulator.ThreadLocalLeakService   : Assigned 1 MB ThreadLocal context to IFE-DotNet-ThreadLocalWorker-7 (Key=SessionContext, Value=NET-SESSION-63894844407310-7)
+2026-10-01 13:53:27.390 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-7] DotNetSimulator.ThreadLocalLeakService   : Thread IFE-DotNet-ThreadLocalWorker-7 entered sleep; ThreadLocal.Dispose() or Value cleanup omitted
+2026-10-01 13:53:27.364 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-8] DotNetSimulator.ThreadLocalLeakService   : Allocating ThreadLocalSessionContext(SessionId=NET-SESSION-63894844407310-8, Buffer=1048576 bytes)
+2026-10-01 13:53:27.364 INFO  30972 --- [IFE-DotNet-ThreadLocalWorker-8] DotNetSimulator.ThreadLocalLeakService   : Assigned 1 MB ThreadLocal context to IFE-DotNet-ThreadLocalWorker-8 (Key=SessionContext, Value=NET-SESSION-63894844407310-8)
+2026-10-01 13:53:27.390 DEBUG 30972 --- [IFE-DotNet-ThreadLocalWorker-8] DotNetSimulator.ThreadLocalLeakService   : Thread IFE-DotNet-ThreadLocalWorker-8 entered sleep; ThreadLocal.Dispose() or Value cleanup omitted
+2026-10-01 13:53:27.500 DEBUG 30972 --- [HttpWorker-5                ] DotNetSimulator.HttpServer               : POST '/incident/queue-saturation', query=?count=5&megabytes=1
+2026-10-01 13:53:27.510 INFO  30972 --- [HttpWorker-5                ] DotNetSimulator.AsyncQueueSaturationService : Enqueuing 5 heavy tasks into BlockingCollection
+2026-10-01 13:53:27.58 DEBUG 30972 --- [IFE-DotNet-AsyncQueueWorker-1] DotNetSimulator.AsyncQueueSaturationService : Allocated HeavyQueuedTask NET-TASK-1 (1048576 bytes)
+2026-10-01 13:53:27.58 INFO  30972 --- [IFE-DotNet-AsyncQueueWorker-1] DotNetSimulator.AsyncQueueSaturationService : Task NET-TASK-1 picked up by IFE-DotNet-AsyncQueueWorker-1, waiting on throttle latch...
+2026-10-01 13:53:27.516 DEBUG 30972 --- [IFE-DotNet-AsyncQueueWorker-2] DotNetSimulator.AsyncQueueSaturationService : Allocated HeavyQueuedTask NET-TASK-2 (1048576 bytes)
+2026-10-01 13:53:27.516 INFO  30972 --- [IFE-DotNet-AsyncQueueWorker-2] DotNetSimulator.AsyncQueueSaturationService : Task NET-TASK-2 picked up by IFE-DotNet-AsyncQueueWorker-2, waiting on throttle latch...
+2026-10-01 13:53:27.524 DEBUG 30972 --- [IFE-DotNet-AsyncQueueWorker-3] DotNetSimulator.AsyncQueueSaturationService : Allocated HeavyQueuedTask NET-TASK-3 (1048576 bytes)
+2026-10-01 13:53:27.524 INFO  30972 --- [IFE-DotNet-AsyncQueueWorker-3] DotNetSimulator.AsyncQueueSaturationService : Task NET-TASK-3 picked up by IFE-DotNet-AsyncQueueWorker-3, waiting on throttle latch...
+2026-10-01 13:53:27.532 DEBUG 30972 --- [IFE-DotNet-AsyncQueueWorker-4] DotNetSimulator.AsyncQueueSaturationService : Allocated HeavyQueuedTask NET-TASK-4 (1048576 bytes)
+2026-10-01 13:53:27.532 INFO  30972 --- [IFE-DotNet-AsyncQueueWorker-4] DotNetSimulator.AsyncQueueSaturationService : Task NET-TASK-4 picked up by IFE-DotNet-AsyncQueueWorker-4, waiting on throttle latch...
+2026-10-01 13:53:27.580 DEBUG 30972 --- [HttpWorker-5                ] DotNetSimulator.AsyncQueueSaturationService : Enqueued NET-TASK-5 with 1MB buffer. Backlog=1
+2026-10-01 13:53:27.585 INFO  30972 --- [HttpWorker-5                ] DotNetSimulator.AsyncQueueSaturationService : Enqueued 5 heavy tasks (1 MB each) into queue; backlog=1
+2026-10-01 13:53:27.800 INFO  30972 --- [DotNetSimulator.HttpServer  ] Received 20 concurrent requests to /incident/db-contention?sleepMs=30000 : 
+2026-10-01 13:53:27.811 DEBUG 30972 --- [HttpWorker-1                ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.816 DEBUG 30972 --- [HttpWorker-1                ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-1 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.812 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.817 DEBUG 30972 --- [HttpWorker-2                ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-2 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.813 DEBUG 30972 --- [HttpWorker-3                ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.818 DEBUG 30972 --- [HttpWorker-3                ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-3 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.814 DEBUG 30972 --- [HttpWorker-4                ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.819 DEBUG 30972 --- [HttpWorker-4                ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-4 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.815 DEBUG 30972 --- [HttpWorker-5                ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.820 DEBUG 30972 --- [HttpWorker-5                ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-5 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.816 DEBUG 30972 --- [HttpWorker-6                ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.821 DEBUG 30972 --- [HttpWorker-6                ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-6 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.817 DEBUG 30972 --- [HttpWorker-7                ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.822 DEBUG 30972 --- [HttpWorker-7                ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-7 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.818 DEBUG 30972 --- [HttpWorker-8                ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.823 DEBUG 30972 --- [HttpWorker-8                ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-8 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.819 DEBUG 30972 --- [HttpWorker-9                ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.824 DEBUG 30972 --- [HttpWorker-9                ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-9 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.820 DEBUG 30972 --- [HttpWorker-10               ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.825 DEBUG 30972 --- [HttpWorker-10               ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-10 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.821 DEBUG 30972 --- [HttpWorker-11               ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.826 DEBUG 30972 --- [HttpWorker-11               ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-11 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.822 DEBUG 30972 --- [HttpWorker-12               ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.827 DEBUG 30972 --- [HttpWorker-12               ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-12 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.823 DEBUG 30972 --- [HttpWorker-13               ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.828 DEBUG 30972 --- [HttpWorker-13               ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-13 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.824 DEBUG 30972 --- [HttpWorker-14               ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.829 DEBUG 30972 --- [HttpWorker-14               ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-14 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.825 DEBUG 30972 --- [HttpWorker-15               ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.830 DEBUG 30972 --- [HttpWorker-15               ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-15 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.826 DEBUG 30972 --- [HttpWorker-16               ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.831 DEBUG 30972 --- [HttpWorker-16               ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-16 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.827 DEBUG 30972 --- [HttpWorker-17               ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.832 DEBUG 30972 --- [HttpWorker-17               ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-17 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.828 DEBUG 30972 --- [HttpWorker-18               ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.833 DEBUG 30972 --- [HttpWorker-18               ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-18 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.829 DEBUG 30972 --- [HttpWorker-19               ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.834 DEBUG 30972 --- [HttpWorker-19               ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-19 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.830 DEBUG 30972 --- [HttpWorker-20               ] DotNetSimulator.HttpServer               : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 13:53:27.835 DEBUG 30972 --- [HttpWorker-20               ] DotNetSimulator.ResourceContentionService : Request thread HttpWorker-20 attempting to enter lock(dbGate)...
+2026-10-01 13:53:27.845 INFO  30972 --- [HttpWorker-1                ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-1 acquired dbGate, simulating DB operation for 30000ms
+2026-10-01 13:53:27.862 WARN  30972 --- [HttpWorker-2                ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-2 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.863 WARN  30972 --- [HttpWorker-3                ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-3 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.864 WARN  30972 --- [HttpWorker-4                ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-4 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.865 WARN  30972 --- [HttpWorker-5                ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-5 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.866 WARN  30972 --- [HttpWorker-6                ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-6 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.867 WARN  30972 --- [HttpWorker-7                ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-7 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.868 WARN  30972 --- [HttpWorker-8                ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-8 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.869 WARN  30972 --- [HttpWorker-9                ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-9 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.870 WARN  30972 --- [HttpWorker-10               ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-10 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.871 WARN  30972 --- [HttpWorker-11               ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-11 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.872 WARN  30972 --- [HttpWorker-12               ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-12 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.873 WARN  30972 --- [HttpWorker-13               ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-13 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.874 WARN  30972 --- [HttpWorker-14               ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-14 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.875 WARN  30972 --- [HttpWorker-15               ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-15 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.876 WARN  30972 --- [HttpWorker-16               ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-16 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.877 WARN  30972 --- [HttpWorker-17               ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-17 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.878 WARN  30972 --- [HttpWorker-18               ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-18 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.879 WARN  30972 --- [HttpWorker-19               ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-19 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:27.880 WARN  30972 --- [HttpWorker-20               ] DotNetSimulator.ResourceContentionService : Thread HttpWorker-20 BLOCKED waiting for dbGate monitor lock held by HttpWorker-1
+2026-10-01 13:53:29.850 ERROR 30972 --- [HttpWorker-6                ] DotNetSimulator.HttpServer               : Exception executing DB contention request: Connection acquisition timed out
+System.TimeoutException: Failed to acquire database lock resource within timeout period (2000 ms).
+   at DotNetSimulator.Services.ResourceContentionService.Saturate(Int32 sleepMs) in D:\Infovision\Hackathon-2025\Product\IFE-2.0\DummyArtifacts\dotnet_simulator\src\Services\ResourceContentionService.cs:line 18
+   at DotNetSimulator.Controllers.IncidentController.HandleRequest(String path, Dictionary2 query) in D:\Infovision\Hackathon-2025\Product\IFE-2.0\DummyArtifacts\dotnet_simulator\src\Controllers\IncidentController.cs:line 55
+   at DotNetSimulator.Program.<>c__DisplayClass2_0.<Main>b__0(Object state) in D:\Infovision\Hackathon-2025\Product\IFE-2.0\DummyArtifacts\dotnet_simulator\src\Program.cs:line 81
+   at System.Threading.QueueUserWorkItemCallback.WaitCallback_Context(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+2026-10-01 13:53:30.110 ERROR 30972 --- [HttpWorker-12               ] DotNetSimulator.HttpServer               : Task rejected: Thread pool task queue reached saturation capacity
+System.InvalidOperationException: The BlockingCollection<T> has exceeded max backlog threshold and consumers are starved.
+   at DotNetSimulator.Services.AsyncQueueSaturationService.EnqueueHeavyTasks(Int32 count, Int32 megabytes) in D:\Infovision\Hackathon-2025\Product\IFE-2.0\DummyArtifacts\dotnet_simulator\src\Services\AsyncQueueSaturationService.cs:line 59
+   at DotNetSimulator.Controllers.IncidentController.HandleRequest(String path, Dictionary2 query) in D:\Infovision\Hackathon-2025\Product\IFE-2.0\DummyArtifacts\dotnet_simulator\src\Controllers\IncidentController.cs:line 51
+   at DotNetSimulator.Program.<>c__DisplayClass2_0.<Main>b__0(Object state) in D:\Infovision\Hackathon-2025\Product\IFE-2.0\DummyArtifacts\dotnet_simulator\src\Program.cs:line 81
+   at System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+2026-10-01 13:53:30.520 ERROR 30972 --- [IFE-DotNet-DeadlockWorker-A ] DotNetSimulator.DeadlockService          : Deadlock monitor timeout detected on thread IFE-DotNet-DeadlockWorker-A
+System.Threading.SynchronizationLockException: Thread IFE-DotNet-DeadlockWorker-A blocked indefinitely on monitor resourceB (0x0000028A7C12F4A0) held by IFE-DotNet-DeadlockWorker-B.
+   at System.Threading.Monitor.Enter(Object obj)
+   at DotNetSimulator.Services.DeadlockService.<TriggerDeadlock>b__3_0() in D:\Infovision\Hackathon-2025\Product\IFE-2.0\DummyArtifacts\dotnet_simulator\src\Services\DeadlockService.cs:line 45
+   at System.Threading.ThreadHelper.ThreadStart()
+2026-10-01 13:53:30.522 ERROR 30972 --- [IFE-DotNet-DeadlockWorker-B ] DotNetSimulator.DeadlockService          : Deadlock monitor timeout detected on thread IFE-DotNet-DeadlockWorker-B
+System.Threading.SynchronizationLockException: Thread IFE-DotNet-DeadlockWorker-B blocked indefinitely on monitor resourceA (0x0000028A7C12F490) held by IFE-DotNet-DeadlockWorker-A.
+   at System.Threading.Monitor.Enter(Object obj)
+   at DotNetSimulator.Services.DeadlockService.<TriggerDeadlock>b__3_1() in D:\Infovision\Hackathon-2025\Product\IFE-2.0\DummyArtifacts\dotnet_simulator\src\Services\DeadlockService.cs:line 65
+   at System.Threading.ThreadHelper.ThreadStart()
+2026-10-01 13:53:31.100 WARN  30972 --- [HttpWorker-3                ] DotNetSimulator.MemoryLeakService        : Memory allocation warning: Large Object Heap (LOH) retention threshold exceeded (5242880 bytes)
+System.OutOfMemoryException: Insufficient memory to continue the execution of the program during LOH allocation.
+   at DotNetSimulator.Services.MemoryLeakService.Leak(Int32 megabytes) in D:\Infovision\Hackathon-2025\Product\IFE-2.0\DummyArtifacts\dotnet_simulator\src\Services\MemoryLeakService.cs:line 21
+   at DotNetSimulator.Controllers.IncidentController.HandleRequest(String path, Dictionary2 query) in D:\Infovision\Hackathon-2025\Product\IFE-2.0\DummyArtifacts\dotnet_simulator\src\Controllers\IncidentController.cs:line 38
+   at DotNetSimulator.Program.<>c__DisplayClass2_0.<Main>b__0(Object state) in D:\Infovision\Hackathon-2025\Product\IFE-2.0\DummyArtifacts\dotnet_simulator\src\Program.cs:line 81
+2026-10-01 13:53:32.400 WARN  30972 --- [IFE-DotNet-WaitingWorker-14 ] DotNetSimulator.ThreadSaturationService  : Worker thread IFE-DotNet-WaitingWorker-14 timed wait interrupted
+System.Threading.ThreadInterruptedException: Thread was interrupted from a waiting state.
+   at System.Threading.ManualResetEventSlim.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at DotNetSimulator.Services.ThreadSaturationService.<CreateWaitingThreads>b__3_0() in D:\Infovision\Hackathon-2025\Product\IFE-2.0\DummyArtifacts\dotnet_simulator\src\Services\ThreadSaturationService.cs:line 27
+   at System.Threading.ThreadHelper.ThreadStart()
+2026-10-01 13:53:35.100 DEBUG 30972 --- [HttpWorker-7                ] DotNetSimulator.HttpServer               : GET '/incident/status', query=
+2026-10-01 13:53:35.105 INFO  30972 --- [HttpWorker-7                ] DotNetSimulator.HttpServer               : Returning status: retainedMemoryObjects=5, waitingWorkers=40, queueBacklog=1, status=UP
+2026-10-01 13:53:35.108 DEBUG 30972 --- [HttpWorker-7                ] DotNetSimulator.HttpServer               : Completed 200 OK for GET /incident/status in 4ms

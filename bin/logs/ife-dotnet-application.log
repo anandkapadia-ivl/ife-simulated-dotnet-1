@@ -1,0 +1,48 @@
+2026-10-01 08:22:50.526 INFO  30972 --- [Thread-1                  ] DotNetSimulator.Program                : Starting DotNetSimulator v1.0.0 on .NET Runtime with PID 30972
+2026-10-01 08:22:50.528 INFO  30972 --- [Thread-1                  ] DotNetSimulator.Program                : Environment: 64-bit OS, MachineName=IVL-LP502
+2026-10-01 08:22:50.561 INFO  30972 --- [Thread-1                  ] DotNetSimulator.Program                : HttpListener started and listening on http://localhost:5050/
+2026-10-01 08:22:50.561 INFO  30972 --- [Thread-1                  ] DotNetSimulator.Program                : Application initialized and ready for incident simulation
+2026-10-01 08:23:19.568 DEBUG 30972 --- [Thread-7                  ] DotNetSimulator.HttpServer             : GET '/actuator/health', query=
+2026-10-01 08:23:19.572 DEBUG 30972 --- [Thread-7                  ] DotNetSimulator.HttpServer             : Completed 200 OK for GET /actuator/health
+2026-10-01 08:23:27.204 DEBUG 30972 --- [Thread-8                  ] DotNetSimulator.HttpServer             : POST '/incident/memory-leak', query=?megabytes=1
+2026-10-01 08:23:27.206 DEBUG 30972 --- [Thread-8                  ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/memory-leak
+2026-10-01 08:23:27.213 DEBUG 30972 --- [Thread-7                  ] DotNetSimulator.HttpServer             : POST '/incident/memory-leak', query=?megabytes=1
+2026-10-01 08:23:27.214 DEBUG 30972 --- [Thread-7                  ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/memory-leak
+2026-10-01 08:23:27.215 DEBUG 30972 --- [Thread-8                  ] DotNetSimulator.HttpServer             : POST '/incident/memory-leak', query=?megabytes=1
+2026-10-01 08:23:27.215 DEBUG 30972 --- [Thread-8                  ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/memory-leak
+2026-10-01 08:23:27.216 DEBUG 30972 --- [Thread-8                  ] DotNetSimulator.HttpServer             : POST '/incident/memory-leak', query=?megabytes=1
+2026-10-01 08:23:27.218 DEBUG 30972 --- [Thread-8                  ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/memory-leak
+2026-10-01 08:23:27.219 DEBUG 30972 --- [Thread-8                  ] DotNetSimulator.HttpServer             : POST '/incident/memory-leak', query=?megabytes=1
+2026-10-01 08:23:27.219 DEBUG 30972 --- [Thread-8                  ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/memory-leak
+2026-10-01 08:23:27.221 DEBUG 30972 --- [Thread-7                  ] DotNetSimulator.HttpServer             : POST '/incident/waiting-threads', query=?count=40&waitMs=300000
+2026-10-01 08:23:27.226 DEBUG 30972 --- [Thread-7                  ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/waiting-threads
+2026-10-01 08:23:27.228 DEBUG 30972 --- [Thread-8                  ] DotNetSimulator.HttpServer             : POST '/incident/deadlock', query=?payloadMb=1
+2026-10-01 08:23:27.229 DEBUG 30972 --- [Thread-8                  ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/deadlock
+2026-10-01 08:23:27.231 DEBUG 30972 --- [Thread-7                  ] DotNetSimulator.HttpServer             : POST '/incident/threadlocal-leak', query=?count=8&megabytes=1
+2026-10-01 08:23:27.236 DEBUG 30972 --- [Thread-7                  ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/threadlocal-leak
+2026-10-01 08:23:27.236 DEBUG 30972 --- [Thread-8                  ] DotNetSimulator.HttpServer             : POST '/incident/queue-saturation', query=?count=5&megabytes=1
+2026-10-01 08:23:27.238 DEBUG 30972 --- [Thread-8                  ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/queue-saturation
+2026-10-01 08:23:28.169 DEBUG 30972 --- [Thread-7                  ] DotNetSimulator.HttpServer             : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 08:23:28.397 DEBUG 30972 --- [Thread-8                  ] DotNetSimulator.HttpServer             : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 08:23:28.594 DEBUG 30972 --- [Thread-60                 ] DotNetSimulator.HttpServer             : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 08:23:28.779 DEBUG 30972 --- [Thread-61                 ] DotNetSimulator.HttpServer             : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 08:23:30.036 DEBUG 30972 --- [Thread-62                 ] DotNetSimulator.HttpServer             : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 08:23:31.261 DEBUG 30972 --- [Thread-63                 ] DotNetSimulator.HttpServer             : GET '/incident/status', query=
+2026-10-01 08:23:31.264 DEBUG 30972 --- [Thread-63                 ] DotNetSimulator.HttpServer             : Completed 200 OK for GET /incident/status
+2026-10-01 08:23:41.555 DEBUG 30972 --- [Thread-64                 ] DotNetSimulator.HttpServer             : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 08:23:57.766 DEBUG 30972 --- [Thread-63                 ] DotNetSimulator.HttpServer             : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 08:23:58.187 DEBUG 30972 --- [Thread-7                  ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/db-contention
+2026-10-01 08:24:05.276 DEBUG 30972 --- [Thread-7                  ] DotNetSimulator.HttpServer             : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 08:24:05.656 DEBUG 30972 --- [Thread-59                 ] DotNetSimulator.HttpServer             : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 08:24:05.725 DEBUG 30972 --- [Thread-65                 ] DotNetSimulator.HttpServer             : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 08:24:06.002 DEBUG 30972 --- [Thread-66                 ] DotNetSimulator.HttpServer             : POST '/incident/db-contention', query=?sleepMs=30000
+2026-10-01 08:24:28.191 DEBUG 30972 --- [Thread-8                  ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/db-contention
+2026-10-01 08:24:58.201 DEBUG 30972 --- [Thread-7                  ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/db-contention
+2026-10-01 08:25:28.215 DEBUG 30972 --- [Thread-60                 ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/db-contention
+2026-10-01 08:25:58.227 DEBUG 30972 --- [Thread-61                 ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/db-contention
+2026-10-01 08:26:28.238 DEBUG 30972 --- [Thread-62                 ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/db-contention
+2026-10-01 08:26:58.252 DEBUG 30972 --- [Thread-64                 ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/db-contention
+2026-10-01 08:27:28.257 DEBUG 30972 --- [Thread-65                 ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/db-contention
+2026-10-01 08:27:58.271 DEBUG 30972 --- [Thread-59                 ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/db-contention
+2026-10-01 08:28:28.273 DEBUG 30972 --- [Thread-63                 ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/db-contention
+2026-10-01 08:28:58.285 DEBUG 30972 --- [Thread-66                 ] DotNetSimulator.HttpServer             : Completed 200 OK for POST /incident/db-contention
